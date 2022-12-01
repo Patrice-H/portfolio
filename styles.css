@@ -1,3 +1,17 @@
+body,
+h1,
+h2 {
+  margin: 0;
+}
 h1 {
   text-align: center;
+}
+.full-screen {
+  height: 120vh;
+}
+.blue {
+  background-color: rgba(0, 0, 255, 0.1);
+}
+.purple {
+  background-color: rgba(80, 0, 80, 0.1);
 }
