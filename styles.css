@@ -21,7 +21,7 @@ h1 {
   padding-top: 100px;
 }
 .full-screen {
-  height: 120vh;
+  min-height: 120vh;
 }
 .blue {
   background-color: #f2f2ff;
@@ -31,4 +31,40 @@ h1 {
 }
 section {
   padding-top: 100px;
+}
+#skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 30px 80px 50px;
+}
+#skills-container img {
+  width: 64px;
+  height: 64px;
+}
+figure {
+  display: flex;
+  align-items: center;
+  height: 124px;
+  margin: 0;
+  padding-left: 30px;
+  gap: 40px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 1600px) {
+  #skills-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 992px) {
+  #skills-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  #skills-container {
+    grid-template-columns: 1fr;
+  }
 }
