@@ -1,4 +1,5 @@
 import { skills } from './data/skills.js';
+import { projects } from './data/projects.js';
 
 const toggleShadow = (element) => {
   let scrollBar = window.scrollY;
@@ -24,6 +25,26 @@ const displaySkills = () => {
   });
 };
 
+const displayProjects = () => {
+  const projectsContainer = document.getElementById('projects-container');
+  projects.forEach((project) => {
+    let article = document.createElement('article');
+    let mask = document.createElement('img');
+    let frame = document.createElement('iframe');
+    article.setAttribute('class', 'project-card');
+    mask.setAttribute('src', 'assets/blank.png');
+    mask.setAttribute('alt', `projet ${project.name}`);
+    mask.setAttribute('class', 'mask');
+    frame.setAttribute('src', `${project.url}`);
+    frame.setAttribute('scrolling', 'no');
+    frame.setAttribute('seamless', 'seamless');
+    article.appendChild(mask);
+    article.appendChild(frame);
+    projectsContainer.appendChild(article);
+  });
+};
+
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => toggleShadow(navbar));
 displaySkills();
+displayProjects();
