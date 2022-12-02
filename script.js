@@ -29,17 +29,32 @@ const displayProjects = () => {
   const projectsContainer = document.getElementById('projects-container');
   projects.forEach((project) => {
     let article = document.createElement('article');
-    let mask = document.createElement('img');
+    let mainMask = document.createElement('div');
+    let details = document.createElement('div');
+    let name = document.createElement('h3');
+    let abstract = document.createElement('p');
+    let techno = document.createElement('p');
     let frame = document.createElement('iframe');
     article.setAttribute('class', 'project-card');
-    mask.setAttribute('src', 'assets/blank.png');
-    mask.setAttribute('alt', `projet ${project.name}`);
-    mask.setAttribute('class', 'mask');
+    details.setAttribute('class', 'project-details');
+    mainMask.setAttribute('class', 'main-mask');
+    name.innerHTML = project.name;
+    abstract.innerHTML = project.abstract;
+    project.technologies.forEach((technologie) => {
+      let span = document.createElement('span');
+      span.setAttribute('class', 'key-word');
+      span.innerHTML = technologie.toUpperCase();
+      techno.appendChild(span);
+    });
     frame.setAttribute('src', `${project.url}`);
     frame.setAttribute('scrolling', 'no');
     frame.setAttribute('seamless', 'seamless');
-    article.appendChild(mask);
+    details.appendChild(name);
+    details.appendChild(abstract);
+    details.appendChild(techno);
     article.appendChild(frame);
+    article.appendChild(mainMask);
+    article.appendChild(details);
     projectsContainer.appendChild(article);
   });
 };
