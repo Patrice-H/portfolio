@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Portfolio</title>
   </head>
@@ -16,21 +22,58 @@
         <a href="#projects">projets</a>
         <a href="#contact">contact</a>
       </nav>
-      <h1>Patrice-H développeur web</h1>
+      <h1>Patrice-H <br />développeur web</h1>
+      <p id="slogan">Contruisons ensemble vos projets numériques</p>
+      <div id="hand-held-out">
+        <img src="assets/hand.jpg" alt="main tendue" />
+      </div>
+      <div class="anchor blue" id="about"></div>
     </header>
     <main>
-      <section class="full-screen purple" id="about">
+      <section class="full-screen purple" id="about-me">
         <h2>à propos</h2>
+        <p class="about-me-text">
+          <img
+            src="assets/about.jpg"
+            alt="livre transformé en ordinateur portable"
+            class="about-me-img desktop"
+          />
+          Bonjour, je m'appelle patrice. Après 29 ans dans le domaine de
+          l'imprimerie et des arts graphiques, j'ai fait le choix de me
+          reconvertir en tant que Développeur Web.<br /><br />
+          Passionné de nouvelle technologies, de photographie et de modélisation
+          3D, j'ai tout d'abord entrepris une formation en cours du soir de
+          webmestre au CNAM. De là, j'ai découvert mon goût pour la
+          programmation web et décidé de pousuivre par une formation diplomante
+          d'analyste programmeur web, avec le même organisme de formation.<br /><br />
+          Dernièrement, je me suis spécialisé sur le développement frontend avec
+          Javascript et React en suivant une formation à distance, basée sur la
+          pédagogie par projets d'OpenClassrooms. Cela m'a permis de travailler
+          sur des cas concrets et de décrocher le diplôme de niveau 6 reconnu
+          bac +3/4.<br /><br />
+          Curieux par nature, je reste toujours en veille sur l'avancée des
+          technologies de communication numérique et en constante amélioration
+          de mes techniques avec pour seul objectif : la satisfaction
+          d'accomplir aux mieux les missions, qui me sont confiées.
+        </p>
+        <img
+          src="assets/about.jpg"
+          alt="livre transformé en ordinateur portable"
+          class="about-me-img mobile"
+        />
+        <div class="anchor purple" id="skills"></div>
       </section>
-      <section class="full-screen blue" id="skills">
+      <section class="full-screen blue long">
         <h2>mes compétences</h2>
         <div id="skills-container"></div>
+        <div class="anchor blue" id="projects"></div>
       </section>
-      <section class="full-screen purple" id="projects">
+      <section class="full-screen purple long">
         <h2>mes projets</h2>
         <div id="projects-container"></div>
+        <div class="anchor purple" id="contact"></div>
       </section>
-      <section class="full-screen blue" id="contact">
+      <section class="full-screen blue">
         <h2>contactez moi</h2>
       </section>
     </main>
