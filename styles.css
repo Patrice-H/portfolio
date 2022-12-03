@@ -1,7 +1,21 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Roboto';
+}
 body,
 h1,
 h2 {
   margin: 0;
+}
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 70px;
 }
 nav {
   position: fixed;
@@ -11,18 +25,63 @@ nav {
   z-index: 10;
 }
 nav a {
+  color: purple;
   margin-right: 30px;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+nav a:hover {
+  color: orangered;
+  text-decoration: underline;
+}
+.anchor {
+  height: 80px;
+  position: absolute;
+  bottom: 0;
 }
 .shadow {
   box-shadow: 0 5px 15px rgba(192, 192, 192, 0.6);
 }
 h1 {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 150px;
+}
+#slogan {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+}
+#hand-held-out {
+  text-align: center;
+  margin-top: 50px;
+}
+#hand-held-out img {
+  width: 500px;
+}
+#about-me {
+  position: relative;
+}
+p.about-me-text {
+  margin: 0;
+  line-height: 24px;
+}
+#about-me div.about-img {
+  float: left;
+}
+.about-me-img.desktop {
+  width: 66%;
+  height: auto;
+  margin-left: 20px;
+  float: right;
+}
+.about-me-img.mobile {
+  display: none;
+  margin: 50px 0 0;
+  width: 100%;
 }
 .full-screen {
-  min-height: 120vh;
+  min-height: 100vh;
 }
 .blue {
   background-color: #f2f2ff;
@@ -31,13 +90,16 @@ h1 {
   background-color: #fff2ff;
 }
 section {
-  padding-top: 100px;
+  position: relative;
+  padding: 80px 80px 0;
+}
+section.long {
+  padding-bottom: 80px;
 }
 #skills-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
-  padding: 30px 80px 50px;
 }
 #skills-container img {
   width: 64px;
@@ -58,7 +120,6 @@ figure {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
-  padding: 30px 80px 50px;
 }
 .project-card {
   position: relative;
@@ -102,12 +163,6 @@ figure {
   color: white;
   text-align: center;
 }
-/*
-.mask:hover {
-  background-color: purple;
-  opacity: 0.9;
-}
-*/
 .main-mask:hover + div.project-details {
   display: block;
 }
@@ -161,5 +216,14 @@ iframe {
 @media screen and (max-width: 768px) {
   #skills-container {
     grid-template-columns: 1fr;
+  }
+  .about-me-img.desktop {
+    display: none;
+  }
+  .about-me-img.mobile {
+    display: block;
+  }
+  section {
+    padding-bottom: 80px;
   }
 }
