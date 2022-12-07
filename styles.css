@@ -202,8 +202,22 @@ iframe {
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
-#contact-form * {
-  display: block;
+.contact-form-element {
+  position: relative;
+  width: 100%;
+}
+.first-line {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-form-error {
+  margin: 0;
+  text-align: right;
+  color: red;
+  font-weight: 700;
+}
+.hidden {
+  display: none;
 }
 #contact-form input {
   height: 25px;
@@ -211,6 +225,7 @@ iframe {
 }
 #contact-form input,
 #contact-form textarea {
+  box-sizing: border-box;
   width: 100%;
   margin-bottom: 15px;
   border-radius: 5px;
@@ -224,6 +239,7 @@ iframe {
   height: 150px;
 }
 #submit-btn {
+  display: block;
   margin: 25px auto 0;
   border: 0;
   line-height: 2.5;
