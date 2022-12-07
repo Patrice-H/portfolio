@@ -77,16 +77,41 @@
         <h2>contactez moi</h2>
         <div id="contact-form">
           <form method="post">
-            <label for="lastname">Nom</label>
-            <input type="text" name="lastname" id="lastname" required />
-            <label for="firstname">Prénom</label>
-            <input type="text" name="firstname" id="firstname" required />
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" required />
-            <label for="subject">Sujet</label>
-            <input type="text" name="subject" id="subject" required />
-            <label for="message">Message</label>
-            <textarea name="message" id="message" required></textarea>
+            <div class="contact-form-element">
+              <div class="first-line">
+                <label for="lastname">Nom</label>
+                <p class="contact-form-error hidden" id="error-lastname"></p>
+              </div>
+              <input type="text" name="lastname" id="lastname" required />
+            </div>
+            <div class="contact-form-element">
+              <div class="first-line">
+                <label for="firstname">Prénom</label>
+                <p class="contact-form-error hidden" id="error-firstname"></p>
+              </div>
+              <input type="text" name="firstname" id="firstname" required />
+            </div>
+            <div class="contact-form-element">
+              <div class="first-line">
+                <label for="email">E-mail</label>
+                <p class="contact-form-error hidden" id="error-email"></p>
+              </div>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div class="contact-form-element">
+              <div class="first-line">
+                <label for="subject">Sujet</label>
+                <p class="contact-form-error hidden" id="error-subject"></p>
+              </div>
+              <input type="text" name="subject" id="subject" required />
+            </div>
+            <div class="contact-form-element">
+              <div class="first-line">
+                <label for="message">Message</label>
+                <p class="contact-form-error hidden" id="error-message"></p>
+              </div>
+              <textarea name="message" id="message" required></textarea>
+            </div>
             <button type="submit" id="submit-btn">Envoyer</button>
           </form>
         </div>
