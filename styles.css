@@ -209,12 +209,15 @@ iframe {
 .first-line {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  height: 30px;
 }
 .contact-form-error {
   margin: 0;
   text-align: right;
   color: red;
   font-weight: 700;
+  font-size: 10px;
 }
 .hidden {
   display: none;
@@ -227,8 +230,13 @@ iframe {
 #contact-form textarea {
   box-sizing: border-box;
   width: 100%;
-  margin-bottom: 15px;
+  max-width: 100%;
   border-radius: 5px;
+}
+#contact-form input.error,
+#contact-form textarea.error {
+  border: thin solid red;
+  outline: none;
 }
 #contact-form input:focus,
 #contact-form textarea:focus {
