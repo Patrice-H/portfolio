@@ -246,6 +246,9 @@ iframe {
 #contact-form textarea {
   height: 150px;
 }
+.asterisk {
+  color: red;
+}
 #submit-btn {
   display: block;
   margin: 25px auto 0;
