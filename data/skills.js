@@ -32,6 +32,14 @@ export const skills = [
     file: 'java.png',
   },
   {
+    name: 'Jest',
+    file: 'jest.png',
+  },
+  {
+    name: 'Testing Library',
+    file: 'testinglibrary.png',
+  },
+  {
     name: 'Mongo DB',
     file: 'mongodb.png',
   },
@@ -42,6 +50,10 @@ export const skills = [
   {
     name: 'MySQL',
     file: 'mysql.png',
+  },
+  {
+    name: 'UML',
+    file: 'uml.png',
   },
   {
     name: 'Photoshop',
