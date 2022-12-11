@@ -30,6 +30,18 @@ export const projects = [
     technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'algorithmie'],
   },
   {
+    name: 'La maison jungle',
+    url: 'https://patrice-h.github.io/la-maison-jungle/',
+    abstract: "Simple page React avec gestion d'un panier d'achat",
+    technologies: ['React', 'javaScript'],
+  },
+  {
+    name: 'Shiny agency',
+    url: 'https://patrice-h.github.io/Shiny_Agency/',
+    abstract: 'Application web de prestataires freelance',
+    technologies: ['React', 'react router', 'interaction avec API'],
+  },
+  {
     name: 'Kasa',
     url: 'https://patrice-h.github.io/PatriceHochard_11_05052022/',
     abstract: 'Application de location de logement',
