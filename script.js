@@ -32,6 +32,7 @@ const createProjectCard = (project) => {
   const name = document.createElement('h3');
   const abstract = document.createElement('p');
   const techno = document.createElement('p');
+  const button = document.createElement('a');
   const frame = document.createElement('iframe');
   card.setAttribute('class', 'project-card');
   details.setAttribute('class', 'project-details');
@@ -44,15 +45,19 @@ const createProjectCard = (project) => {
     keyWord.innerHTML = technologie.toUpperCase();
     techno.appendChild(keyWord);
   });
+  button.setAttribute('href', `details.html?id=${project.id}`);
+  button.setAttribute('class', 'button');
+  button.innerHTML = 'Détails du projet';
   frame.setAttribute('src', `${project.url}`);
   frame.setAttribute('scrolling', 'no');
   frame.setAttribute('seamless', 'seamless');
   details.appendChild(name);
   details.appendChild(abstract);
   details.appendChild(techno);
-  card.appendChild(frame);
+  details.appendChild(button);
+  mainMask.appendChild(details);
   card.appendChild(mainMask);
-  card.appendChild(details);
+  card.appendChild(frame);
 
   return card;
 };
