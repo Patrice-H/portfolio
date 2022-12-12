@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Détails du projet</title>
+  </head>
+  <body class="blue">
+    <div class="banner">
+      <iframe class="banner-frame" id="banner-iframe"></iframe>
+      <div class="banner-mask"></div>
+    </div>
+    <h1 id="project-title"></h1>
+    <p id="project-abstract"></p>
+    <div class="description">
+      <h2>Description :</h2>
+      <p id="project-description"></p>
+    </div>
+    <div class="links">
+      <a href="" id="project-demo" class="button">Voir la demo</a>
+      <a href="" id="project-code" class="button">Voir le code</a>
+    </div>
+    <script type="module">
+      import { projects } from './data/projects.js';
+      const title = document.getElementById('project-title');
+      const abstract = document.getElementById('project-abstract');
+      const description = document.getElementById('project-description');
+      const demo = document.getElementById('project-demo');
+      const code = document.getElementById('project-code');
+      const frame = document.getElementById('banner-iframe');
+      const url = window.location.href;
+      const id = parseInt(url.split('?id=')[1]);
+      const project = projects.find((project) => project.id === id);
+      title.innerHTML = project.name;
+      frame.setAttribute('src', `${project.url}`);
+      frame.setAttribute('scrolling', 'no');
+      frame.setAttribute('seamless', 'seamless');
+      abstract.innerHTML = `${project.abstract}`;
+      description.innerHTML = `${project.description}`;
+      demo.setAttribute('href', `${project.url}`);
+      code.setAttribute('href', `${project.codelink}`);
+      console.log(project);
+    </script>
+  </body>
+</html>
