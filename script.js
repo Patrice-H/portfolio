@@ -25,36 +25,43 @@ const displaySkills = () => {
   });
 };
 
+const createProjectCard = (project) => {
+  const card = document.createElement('article');
+  const mainMask = document.createElement('div');
+  const details = document.createElement('div');
+  const name = document.createElement('h3');
+  const abstract = document.createElement('p');
+  const techno = document.createElement('p');
+  const frame = document.createElement('iframe');
+  card.setAttribute('class', 'project-card');
+  details.setAttribute('class', 'project-details');
+  mainMask.setAttribute('class', 'main-mask');
+  name.innerHTML = project.name;
+  abstract.innerHTML = project.abstract;
+  project.technologies.forEach((technologie) => {
+    const keyWord = document.createElement('span');
+    keyWord.setAttribute('class', 'key-word');
+    keyWord.innerHTML = technologie.toUpperCase();
+    techno.appendChild(keyWord);
+  });
+  frame.setAttribute('src', `${project.url}`);
+  frame.setAttribute('scrolling', 'no');
+  frame.setAttribute('seamless', 'seamless');
+  details.appendChild(name);
+  details.appendChild(abstract);
+  details.appendChild(techno);
+  card.appendChild(frame);
+  card.appendChild(mainMask);
+  card.appendChild(details);
+
+  return card;
+};
+
 const displayProjects = () => {
   const projectsContainer = document.getElementById('projects-container');
+
   projects.forEach((project) => {
-    let article = document.createElement('article');
-    let mainMask = document.createElement('div');
-    let details = document.createElement('div');
-    let name = document.createElement('h3');
-    let abstract = document.createElement('p');
-    let techno = document.createElement('p');
-    let frame = document.createElement('iframe');
-    article.setAttribute('class', 'project-card');
-    details.setAttribute('class', 'project-details');
-    mainMask.setAttribute('class', 'main-mask');
-    name.innerHTML = project.name;
-    abstract.innerHTML = project.abstract;
-    project.technologies.forEach((technologie) => {
-      let span = document.createElement('span');
-      span.setAttribute('class', 'key-word');
-      span.innerHTML = technologie.toUpperCase();
-      techno.appendChild(span);
-    });
-    frame.setAttribute('src', `${project.url}`);
-    frame.setAttribute('scrolling', 'no');
-    frame.setAttribute('seamless', 'seamless');
-    details.appendChild(name);
-    details.appendChild(abstract);
-    details.appendChild(techno);
-    article.appendChild(frame);
-    article.appendChild(mainMask);
-    article.appendChild(details);
+    const article = createProjectCard(project);
     projectsContainer.appendChild(article);
   });
 };
