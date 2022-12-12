@@ -12,7 +12,7 @@ h2 {
 h1 {
   font-size: 48px;
 }
-h2 {
+h2.home-sections {
   font-size: 36px;
   text-transform: uppercase;
   margin-bottom: 70px;
@@ -46,6 +46,16 @@ nav a:hover {
 h1 {
   text-align: center;
   padding-top: 150px;
+}
+h1#project-title {
+  font-size: 36px;
+  padding: 0;
+  margin-top: 30px;
+}
+#project-abstract {
+  text-align: center;
+  margin: 10px;
+  font-size: 18px;
 }
 #slogan {
   text-align: center;
@@ -138,13 +148,6 @@ figure {
   border-radius: 20px;
   z-index: 2;
 }
-.main-mask img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 .project-details {
   position: absolute;
   top: 0;
@@ -178,23 +181,65 @@ figure {
   padding: 8px;
   border-radius: 10px;
 }
+.banner {
+  position: relative;
+  width: 80vw;
+  height: 25vw;
+  margin: 50px auto 0;
+  box-sizing: border-box;
+  border-radius: 30px;
+  overflow: hidden;
+}
 iframe {
-  width: 250%;
-  height: 250%;
   border: none;
-  -ms-transform: scale(0.4);
-  -moz-transform: scale(0.4);
-  -o-transform: scale(0.4);
-  -webkit-transform: scale(0.4);
-  transform: scale(0.4);
   -ms-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
   -o-transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
   background-color: white;
+}
+.banner-frame {
+  width: 150%;
+  height: 250%;
+  -ms-transform: scale(0.666, 0.4);
+  -moz-transform: scale(0.666, 0.4);
+  -o-transform: scale(0.666, 0.4);
+  -webkit-transform: scale(0.666, 0.4);
+  transform: scale(0.666, 0.4);
+}
+.projects-frame {
+  width: 250%;
+  height: 250%;
+  -ms-transform: scale(0.4);
+  -moz-transform: scale(0.4);
+  -o-transform: scale(0.4);
+  -webkit-transform: scale(0.4);
+  transform: scale(0.4);
   border-radius: 20px;
   z-index: 1;
+}
+.banner-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(128, 128, 128, 0.5), transparent);
+  z-index: 2;
+}
+.description,
+.links {
+  width: 80vw;
+  margin: auto;
+}
+.links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.links a {
+  margin: 0 20px;
 }
 #contact-form {
   max-width: 360px;
@@ -254,14 +299,16 @@ iframe {
 #submit-btn {
   margin: 25px auto 0;
 }
-a.button {
-  text-decoration: none;
-  width: fit-content;
+a.details-btn {
   position: absolute;
   bottom: 80px;
   left: 0;
   right: 0;
   margin: auto;
+}
+a.button {
+  text-decoration: none;
+  width: fit-content;
 }
 .button {
   display: block;

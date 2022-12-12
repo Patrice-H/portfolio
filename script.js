@@ -46,11 +46,12 @@ const createProjectCard = (project) => {
     techno.appendChild(keyWord);
   });
   button.setAttribute('href', `details.html?id=${project.id}`);
-  button.setAttribute('class', 'button');
+  button.setAttribute('class', 'button details-btn');
   button.innerHTML = 'Détails du projet';
   frame.setAttribute('src', `${project.url}`);
   frame.setAttribute('scrolling', 'no');
   frame.setAttribute('seamless', 'seamless');
+  frame.setAttribute('class', 'projects-frame');
   details.appendChild(name);
   details.appendChild(abstract);
   details.appendChild(techno);
