@@ -9,6 +9,9 @@ h1,
 h2 {
   margin: 0;
 }
+a {
+  text-decoration: none;
+}
 h1 {
   font-size: 48px;
 }
@@ -307,8 +310,18 @@ a.details-btn {
   margin: auto;
 }
 a.button {
-  text-decoration: none;
   width: fit-content;
+}
+a.back-link {
+  position: absolute;
+  top: -5px;
+  left: 30px;
+  font-size: 48px;
+  font-weight: 700;
+  color: purple;
+}
+a.back-link:hover {
+  color: red;
 }
 .button {
   display: block;
