@@ -191,12 +191,17 @@ figure {
 .main-mask:hover + iframe {
   opacity: 0.2;
 }
-.project-details span.key-word {
+.techno {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.techno span.key-word {
   color: purple;
   font-size: 12px;
   font-weight: 700;
   background-color: #f2f2ff;
-  margin-right: 10px;
+  margin: 0 10px 10px 0;
   padding: 8px;
   border-radius: 10px;
 }
@@ -458,6 +463,12 @@ a.back-link:hover {
   }
   h2.home-sections {
     text-align: center;
+  }
+  .project-details h3 {
+    padding-top: 20px;
+  }
+  a.details-btn {
+    bottom: 30px;
   }
   #contact-form {
     max-width: none;

@@ -25,6 +25,23 @@ const displaySkills = () => {
   });
 };
 
+const getNonBreakingWord = (word) => {
+  let response = '';
+  const tab = word.split(' ');
+  if (tab.length > 1) {
+    tab.forEach((item, index) => {
+      response += item;
+      if (index < tab.length - 1) {
+        response += '\xa0';
+      }
+    });
+  } else {
+    response = word;
+  }
+
+  return response;
+};
+
 const createProjectCard = (project) => {
   const card = document.createElement('article');
   const mainMask = document.createElement('div');
@@ -42,9 +59,10 @@ const createProjectCard = (project) => {
   project.technologies.forEach((technologie) => {
     const keyWord = document.createElement('span');
     keyWord.setAttribute('class', 'key-word');
-    keyWord.innerHTML = technologie.toUpperCase();
+    keyWord.innerHTML = getNonBreakingWord(technologie).toUpperCase();
     techno.appendChild(keyWord);
   });
+  techno.setAttribute('class', 'techno');
   button.setAttribute('href', `details.html?id=${project.id}`);
   button.setAttribute('class', 'button details-btn');
   button.innerHTML = 'Détails du projet';
