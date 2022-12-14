@@ -23,9 +23,7 @@ h2.home-sections {
 nav {
   position: fixed;
   padding: 30px 0;
-  /*text-align: right;
-  width: 100%;*/
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   gap: 30px;
@@ -111,6 +109,9 @@ p.about-me-text {
 .full-screen {
   min-height: 100vh;
 }
+.full-screen:last-child {
+  padding-bottom: 50px;
+}
 .blue {
   background-color: #f2f2ff;
 }
@@ -119,7 +120,7 @@ p.about-me-text {
 }
 section {
   position: relative;
-  padding: 80px 80px 0;
+  padding: 60px 80px 0;
 }
 section.long {
   padding-bottom: 80px;
@@ -451,5 +452,14 @@ a.back-link:hover {
   }
   section {
     padding-bottom: 80px;
+  }
+  .anchor {
+    height: 0;
+  }
+  h2.home-sections {
+    text-align: center;
+  }
+  #contact-form {
+    max-width: none;
   }
 }
