@@ -183,7 +183,25 @@ const controlForm = (inputs, errors, messages) => {
   console.log('send form : ', isFormOk);
 };
 
+const closeMenu = (menuItems) => {
+  Array.from(menuItems).forEach((item) => {
+    item.classList.remove('hamburger-menu');
+  });
+};
+
+const toggleMenu = (menuItems) => {
+  Array.from(menuItems).forEach((item) => {
+    if (Array.from(item.classList).includes('hamburger-menu')) {
+      item.classList.remove('hamburger-menu');
+    } else {
+      item.classList.add('hamburger-menu');
+    }
+  });
+};
+
 const navbar = document.getElementById('navbar');
+const hamburgerMenuBtn = document.getElementById('hamburger-menu-btn');
+const menuItems = document.getElementsByClassName('menu-item');
 const submitBtn = document.getElementById('submit-btn');
 const lastNameInput = document.getElementById('lastname');
 const lastNameError = document.getElementById('error-lastname');
@@ -218,6 +236,10 @@ window.addEventListener('scroll', () => toggleShadow(navbar));
 submitBtn.addEventListener('click', () =>
   controlForm(inputs, errors, errorMessages)
 );
+Array.from(menuItems).forEach((item) => {
+  item.addEventListener('click', () => closeMenu(menuItems));
+});
+hamburgerMenuBtn.addEventListener('click', () => toggleMenu(menuItems));
 lastNameInput.addEventListener('blur', () => {
   controlName(lastNameInput, lastNameError, errorMessages);
 });
