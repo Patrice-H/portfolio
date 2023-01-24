@@ -81,6 +81,15 @@ h1#project-title {
 #hand-held-out {
   text-align: center;
   margin-top: 50px;
+  animation: img-display 1s;
+}
+@keyframes img-display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 #hand-held-out img {
   width: 500px;
@@ -89,17 +98,41 @@ h1#project-title {
   position: relative;
 }
 p.about-me-text {
+  text-align: justify;
   margin: 0;
   line-height: 24px;
+  animation-duration: 1.4s;
+  animation-name: text-opacity;
+}
+@keyframes text-opacity {
+  from {
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+  }
+  to {
+    color: #000;
+  }
 }
 #about-me div.about-img {
   float: left;
 }
 .about-me-img.desktop {
   width: 66%;
+  animation-duration: 1s;
+  animation-name: img-slidein;
   height: auto;
   margin-left: 20px;
   float: right;
+}
+@keyframes img-slidein {
+  from {
+    width: 5%;
+  }
+  to {
+    width: 66%;
+  }
 }
 .about-me-img.mobile {
   display: none;
@@ -144,6 +177,15 @@ figure {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  animation: card-display 1s;
+}
+@keyframes card-display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 #projects-container {
   display: grid;
