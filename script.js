@@ -16,6 +16,7 @@ const displaySkills = () => {
     let figure = document.createElement('figure');
     let img = document.createElement('img');
     let figcaption = document.createElement('figcaption');
+    figure.setAttribute('id', `fig${skill.id}`);
     img.setAttribute('src', `assets/${skill.file}`);
     img.setAttribute('alt', skill.name);
     figcaption.innerHTML = skill.name;

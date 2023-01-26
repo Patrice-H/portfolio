@@ -81,7 +81,7 @@ h1#project-title {
 #hand-held-out {
   text-align: center;
   margin-top: 50px;
-  animation: img-display 1s;
+  animation: img-display 1.5s ease-in-out;
 }
 @keyframes img-display {
   from {
@@ -159,6 +159,7 @@ section.long {
   padding-bottom: 80px;
 }
 #skills-container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
@@ -177,8 +178,42 @@ figure {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  animation: card-display 1s;
+  /*opacity: 0;*/
 }
+
+#fig1,
+#fig2,
+#fig3 {
+  animation: card-display 1s ease-in-out;
+}
+
+#fig4,
+#fig5,
+#fig6 {
+  animation: card-display 2s ease-in-out;
+}
+
+#fig7,
+#fig8,
+#fig9 {
+  animation: card-display 3s ease-in-out;
+}
+#fig10,
+#fig11,
+#fig12 {
+  animation: card-display 4s ease-in-out;
+}
+#fig13,
+#fig14,
+#fig15 {
+  animation: card-display 5s ease-in-out;
+}
+#fig16,
+#fig17,
+#fig18 {
+  animation: card-display 6s ease-in-out;
+}
+
 @keyframes card-display {
   from {
     opacity: 0;
@@ -314,6 +349,18 @@ iframe {
   background-color: rgba(0, 0, 255, 0.1);
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
+  animation: display-form 3s;
+}
+@keyframes display-form {
+  from {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .contact-form-element {
   position: relative;
@@ -420,8 +467,11 @@ a.back-link:hover {
 #social-media {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 120px;
+  margin: 0 -90px;
+  position: absolute;
+  top: 50px;
+  width: 100%;
 }
 #social-media a {
   width: 50px;
@@ -434,6 +484,34 @@ a.back-link:hover {
 #social-media img {
   width: 100%;
 }
+
+#linkedin {
+  animation: display-linkedin 1s;
+}
+@keyframes display-linkedin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#github {
+  animation: display-git 2s;
+}
+@keyframes display-git {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 1600px) {
   #skills-container {
     grid-template-columns: 1fr 1fr 1fr;
