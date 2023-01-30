@@ -26,6 +26,40 @@ const displaySkills = () => {
   });
 };
 
+const getAnimationbysection = (section) => {
+  let anim1, anim2, anim3;
+  switch (section) {
+    case 1:
+      anim1 = document.getElementById('about-img');
+      anim2 = document.getElementById('about-text');
+      anim1.classList.remove('hidden');
+      anim2.classList.remove('hidden');
+      break;
+    case 2:
+      break;
+    case 3:
+      break;
+    case 4:
+      anim1 = document.getElementById('linkedin');
+      anim2 = document.getElementById('github');
+      anim3 = document.getElementById('contact-form');
+      anim1.classList.remove('hidden');
+      anim2.classList.remove('hidden');
+      anim3.classList.remove('hidden');
+      break;
+    default:
+      break;
+  }
+};
+
+const launchAnimation = (index) => {
+  const ellipsis = document.getElementsByClassName('anim-3pts');
+  if (index > 0 && index < 5) {
+    ellipsis[index - 1].classList.add('hidden');
+  }
+  getAnimationbysection(index);
+};
+
 const getNonBreakingWord = (word) => {
   let response = '';
   const tab = word.split(' ');
@@ -251,6 +285,14 @@ const errorMessages = [
   'Ne doit contenir que des lettres et au moins 2 caractères',
   "Ce champ doit être au format d'un email",
 ];
+const links = document.getElementsByClassName('menu-item');
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', (e) => {
+    const section = e.target.id.split('-link')[0];
+    window.document.location = `./#${section}`;
+    launchAnimation(i);
+  });
+}
 window.addEventListener('scroll', () => toggleShadow(navbar));
 submitBtn.addEventListener('click', () =>
   controlForm(inputs, errors, errorMessages)

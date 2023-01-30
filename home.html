@@ -29,11 +29,11 @@
           alt="menu"
           id="hamburger-menu-btn"
         />
-        <a href="#home" class="menu-item">accueil</a>
-        <a href="#about" class="menu-item">à propos</a>
-        <a href="#skills" class="menu-item">compétences</a>
-        <a href="#projects" class="menu-item">projets</a>
-        <a href="#contact" class="menu-item">contact</a>
+        <a href="#home" class="menu-item" id="home-link">accueil</a>
+        <a href="#about" class="menu-item" id="about-link">à propos</a>
+        <a href="#skills" class="menu-item" id="skills-link">compétences</a>
+        <a href="#projects" class="menu-item" id="projects-link">projets</a>
+        <a href="#contact" class="menu-item" id="contact-link">contact</a>
       </nav>
       <h1>Patrice-H <br />développeur web</h1>
       <p id="slogan">Contruisons ensemble vos projets numériques</p>
@@ -52,11 +52,12 @@
             <span class="pt3">.</span>
           </div>
         </h2>
-        <p class="about-me-text">
+        <p class="about-me-text hidden" id="about-text">
           <img
             src="assets/about.jpg"
             alt="livre transformé en ordinateur portable"
-            class="about-me-img desktop"
+            class="about-me-img desktop hidden"
+            id="about-img"
           />
           <span class="sub-p">
             Bonjour, je m'appelle Patrice. Après 29 ans dans le domaine de
@@ -106,7 +107,7 @@
           </div>
         </h2>
         <div id="skills-container">
-          <div id="mask-skills"></div>
+          <!--<div id="mask-skills"></div>-->
         </div>
         <div class="anchor blue" id="projects"></div>
       </section>
@@ -131,7 +132,7 @@
             <span class="pt3">.</span>
           </div>
         </h2>
-        <div id="contact-form">
+        <div id="contact-form" class="hidden">
           <form method="post">
             <div class="contact-form-element">
               <div class="first-line">
@@ -181,9 +182,10 @@
           <a
             href="https://www.linkedin.com/in/patrice-h-b64439257/"
             id="linkedin"
+            class="hidden"
             ><img src="assets/linkedin.png" alt="LinkedIn"
           /></a>
-          <a href="https://github.com/Patrice-H" id="github"
+          <a href="https://github.com/Patrice-H" id="github" class="hidden"
             ><img src="assets/github.png" alt="GitHub"
           /></a>
         </div>

@@ -78,6 +78,12 @@ h1#project-title {
   margin-top: 30px;
   font-size: 18px;
 }
+.anim-paused {
+  animation-play-state: paused;
+}
+.anim-running {
+  animation-play-state: running;
+}
 #hand-held-out {
   text-align: center;
   margin-top: 50px;
@@ -151,6 +157,9 @@ h1#project-title {
     color: #000;
   }
 }
+.hidden {
+  display: none;
+}
 #about-me {
   position: relative;
 }
@@ -158,8 +167,9 @@ p.about-me-text {
   text-align: justify;
   margin: 0;
   line-height: 24px;
-  animation-duration: 1.4s;
-  animation-name: text-opacity;
+}
+#about-text {
+  animation: text-opacity 1.4s;
 }
 @keyframes text-opacity {
   from {
@@ -177,11 +187,14 @@ p.about-me-text {
 }
 .about-me-img.desktop {
   width: 66%;
-  animation-duration: 1s;
-  animation-name: img-slidein;
   height: auto;
   margin-left: 20px;
   float: right;
+  opacity: 0;
+}
+#about-img {
+  animation: img-slidein 1s;
+  opacity: 1;
 }
 @keyframes img-slidein {
   from {
@@ -235,8 +248,8 @@ figure {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  opacity: 1;
 }
+/*
 #mask-skills {
   background-color: #f2f2ff;
   position: absolute;
@@ -254,6 +267,7 @@ figure {
     height: 0;
   }
 }
+
 #fig1,
 #fig2,
 #fig3 {
@@ -286,7 +300,7 @@ figure {
 #fig18 {
   animation: card-display 0.5s 2.5s;
 }
-
+*/
 @keyframes card-display {
   from {
     opacity: 0;
