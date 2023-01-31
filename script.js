@@ -17,12 +17,34 @@ const displaySkills = () => {
     let img = document.createElement('img');
     let figcaption = document.createElement('figcaption');
     figure.setAttribute('id', `fig${skill.id}`);
+    figure.setAttribute('class', 'skills-row');
     img.setAttribute('src', `assets/${skill.file}`);
     img.setAttribute('alt', skill.name);
     figcaption.innerHTML = skill.name;
     figure.appendChild(img);
     figure.appendChild(figcaption);
     skillsContainer.appendChild(figure);
+  });
+};
+
+const displayRowByRow = () => {
+  const windowWidth = window.innerWidth;
+  const skillsRow = Array.from(document.getElementsByClassName('skills-row'));
+  const cls = new Array();
+  skillsRow.forEach((skill) => cls.push(`row-${skillsRow.indexOf(skill)}`));
+  let rowNumber;
+  skillsRow.forEach((skill) => {
+    skill.classList.remove(...cls);
+    if (windowWidth > 1600) {
+      rowNumber = rowNumber = Math.floor(skillsRow.indexOf(skill) / 4);
+    } else if (windowWidth > 992) {
+      rowNumber = Math.floor(skillsRow.indexOf(skill) / 3);
+    } else if (windowWidth > 768) {
+      rowNumber = rowNumber = Math.floor(skillsRow.indexOf(skill) / 2);
+    } else {
+      rowNumber = rowNumber = Math.floor(skillsRow.indexOf(skill) / 1);
+    }
+    skill.classList.add(`row-${rowNumber}`);
   });
 };
 
@@ -36,6 +58,9 @@ const getAnimationbysection = (section) => {
       anim2.classList.remove('hidden');
       break;
     case 2:
+      anim1 = document.getElementById('mask-skills');
+      anim1.classList.add('mask-reduce');
+      displayRowByRow();
       break;
     case 3:
       break;
