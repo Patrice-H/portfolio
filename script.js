@@ -58,8 +58,6 @@ const getAnimationbysection = (section) => {
       anim2.classList.remove('hidden');
       break;
     case 2:
-      anim1 = document.getElementById('mask-skills');
-      anim1.classList.add('mask-reduce');
       displayRowByRow();
       break;
     case 3:

@@ -233,22 +233,8 @@ section.long {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
-  height: 1;
-  opacity: 1;
-  /*animation: skills-height 8s;*/
 }
-/*
-@keyframes skills-height {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-  to {
-    height: 100%;
-    opacity: 1;
-  }
-}
-*/
+
 #skills-container img {
   width: 64px;
   height: 64px;
@@ -263,91 +249,85 @@ figure {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  animation: display-skill 0.5s infinite 5s;
-}
-@keyframes display-skill {
-  from {
-    opacity: 0;
-  }
-  99.99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-#mask-skills {
-  background-color: #f2f2ff;
   opacity: 0;
-  position: absolute;
-  width: 103%;
-  height: 780px;
-  bottom: -20px;
-  margin-left: -20px;
-  z-index: 5;
 }
-.mask-reduce {
-  animation: mask-reduce-height 5s;
-}
-@keyframes mask-reduce-height {
-  from {
-    height: 780px;
-    opacity: 1;
-  }
-  16.5% {
-    height: 780px;
-  }
-  16.66% {
-    height: 620px;
-  }
-  33.2% {
-    height: 620px;
-  }
-  33.33% {
-    height: 472px;
-  }
-  49.9% {
-    height: 472px;
-  }
-  50% {
-    height: 308px;
-  }
-  66.5% {
-    height: 308px;
-  }
-  66.66% {
-    height: 164px;
-  }
-  83.2% {
-    height: 164px;
-  }
-  to {
-    height: 0;
-    opacity: 1;
-  }
+.row-0 {
+  animation: row0-display 7s ease-in-out forwards;
 }
 .row-1 {
-  animation: card-display 1s ease-in-out;
+  animation: row1-display 6s ease-in-out 1s forwards;
 }
-
 .row-2 {
-  animation: card-display 1s ease-in-out 1s;
+  animation: row2-display 5s ease-in-out 2s forwards;
 }
-
 .row-3 {
-  animation: card-display 1s ease-in-out 2s;
+  animation: row3-display 4s ease-in-out 3s forwards;
 }
 .row-4 {
-  animation: card-display 1s ease-in-out 3s;
+  animation: row4-display 3s ease-in-out 4s forwards;
 }
 .row-5 {
-  animation: card-display 1s ease-in-out 4s;
+  animation: row5-display 2s ease-in-out 5s forwards;
 }
 .row-6 {
-  animation: card-display 1s ease-in-out 5s;
+  animation: row6-display 1s ease-in-out 6s forwards;
 }
-
-@keyframes card-display {
+@keyframes row0-display {
+  from {
+    opacity: 0;
+  }
+  16.66% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes row1-display {
+  from {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes row2-display {
+  from {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes row3-display {
+  from {
+    opacity: 0;
+  }
+  33.33% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes row4-display {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes row5-display {
   from {
     opacity: 0;
   }
@@ -355,6 +335,7 @@ figure {
     opacity: 1;
   }
 }
+
 #projects-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
