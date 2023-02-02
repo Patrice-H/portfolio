@@ -82,9 +82,9 @@ const getAnimationbysection = (section) => {
       anim1 = document.getElementById('linkedin');
       anim2 = document.getElementById('github');
       anim3 = document.getElementById('contact-form');
-      anim1.classList.remove('hidden');
-      anim2.classList.remove('hidden');
-      anim3.classList.remove('hidden');
+      anim1.classList.add('display-contact-method');
+      anim2.classList.add('display-contact-method');
+      anim3.classList.add('display-contact-method');
       break;
     default:
       break;

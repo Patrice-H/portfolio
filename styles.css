@@ -475,7 +475,10 @@ iframe {
   background-color: rgba(0, 0, 255, 0.1);
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  animation: display-form 3s;
+  opacity: 0;
+}
+#contact-form.display-contact-method {
+  animation: progressive-display 1s ease-in-out 2s forwards;
 }
 @keyframes display-form {
   from {
@@ -612,32 +615,25 @@ a.back-link:hover {
 }
 
 #linkedin {
-  animation: display-linkedin 1s;
+  opacity: 0;
 }
-@keyframes display-linkedin {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+#linkedin.display-contact-method {
+  animation: progressive-display 1s ease-in-out forwards;
 }
-
 #github {
-  animation: display-git 2s;
+  opacity: 0;
 }
-@keyframes display-git {
+#github.display-contact-method {
+  animation: progressive-display 1s ease-in-out 1s forwards;
+}
+@keyframes progressive-display {
   from {
-    opacity: 0;
-  }
-  50% {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
 }
-
 @media screen and (max-width: 1600px) {
   #skills-container {
     grid-template-columns: 1fr 1fr 1fr;
