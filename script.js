@@ -66,8 +66,17 @@ const displayItemByItem = () => {
   });
 };
 
-const getAnimationbysection = (section) => {
+const displayContactSection = () => {
   let anim1, anim2, anim3;
+  anim1 = document.getElementById('linkedin');
+  anim2 = document.getElementById('github');
+  anim3 = document.getElementById('contact-form');
+  anim1.classList.add('display-contact-method');
+  anim2.classList.add('display-contact-method');
+  anim3.classList.add('display-contact-method');
+};
+
+const getAnimationbysection = (section) => {
   switch (section) {
     case 1:
       displayAboutSection();
@@ -79,12 +88,7 @@ const getAnimationbysection = (section) => {
       displayItemByItem();
       break;
     case 4:
-      anim1 = document.getElementById('linkedin');
-      anim2 = document.getElementById('github');
-      anim3 = document.getElementById('contact-form');
-      anim1.classList.add('display-contact-method');
-      anim2.classList.add('display-contact-method');
-      anim3.classList.add('display-contact-method');
+      displayContactSection();
       break;
     default:
       break;
