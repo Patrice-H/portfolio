@@ -55,6 +55,17 @@ const displayRowByRow = () => {
   });
 };
 
+const displayItemByItem = () => {
+  const projectCards = Array.from(
+    document.getElementsByClassName('project-card')
+  );
+  projectCards.forEach((project, index) => {
+    setTimeout(() => {
+      project.classList.add('display-project');
+    }, index * 1000);
+  });
+};
+
 const getAnimationbysection = (section) => {
   let anim1, anim2, anim3;
   switch (section) {
@@ -65,6 +76,7 @@ const getAnimationbysection = (section) => {
       displayRowByRow();
       break;
     case 3:
+      displayItemByItem();
       break;
     case 4:
       anim1 = document.getElementById('linkedin');

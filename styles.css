@@ -348,6 +348,18 @@ figure {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+}
+.project-card.display-project {
+  animation: display-card 1s ease-in-out forwards;
+}
+@keyframes display-card {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .main-mask {
   position: absolute;
