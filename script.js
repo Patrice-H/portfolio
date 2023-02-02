@@ -26,6 +26,13 @@ const displaySkills = () => {
     skillsContainer.appendChild(figure);
   });
 };
+const displayAboutSection = () => {
+  let anim1, anim2;
+  anim1 = document.getElementById('about-img');
+  anim2 = document.getElementById('about-text');
+  anim1.classList.remove('hidden');
+  anim2.classList.remove('hidden');
+};
 
 const displayRowByRow = () => {
   const windowWidth = window.innerWidth;
@@ -52,10 +59,7 @@ const getAnimationbysection = (section) => {
   let anim1, anim2, anim3;
   switch (section) {
     case 1:
-      anim1 = document.getElementById('about-img');
-      anim2 = document.getElementById('about-text');
-      anim1.classList.remove('hidden');
-      anim2.classList.remove('hidden');
+      displayAboutSection();
       break;
     case 2:
       displayRowByRow();
