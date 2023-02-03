@@ -34,14 +34,11 @@ const displayAboutSection = () => {
   anim2.classList.remove('hidden');
 };
 
-const displayRowByRow = () => {
+const displaySkillsSection = () => {
   const windowWidth = window.innerWidth;
   const skillsRow = Array.from(document.getElementsByClassName('skills-row'));
-  const cls = new Array();
-  skillsRow.forEach((skill) => cls.push(`row-${skillsRow.indexOf(skill)}`));
   let rowNumber;
   skillsRow.forEach((skill) => {
-    skill.classList.remove(...cls);
     if (windowWidth > 1600) {
       rowNumber = rowNumber = Math.floor(skillsRow.indexOf(skill) / 4);
     } else if (windowWidth > 992) {
@@ -51,7 +48,9 @@ const displayRowByRow = () => {
     } else {
       rowNumber = rowNumber = Math.floor(skillsRow.indexOf(skill) / 1);
     }
-    skill.classList.add(`row-${rowNumber}`);
+    setTimeout(() => {
+      skill.classList.add('display-skill');
+    }, rowNumber * 1000);
   });
 };
 
@@ -82,7 +81,7 @@ const getAnimationbysection = (section) => {
       displayAboutSection();
       break;
     case 2:
-      displayRowByRow();
+      displaySkillsSection();
       break;
     case 3:
       displayItemByItem();
