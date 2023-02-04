@@ -245,11 +245,17 @@ figure {
   height: 124px;
   margin: 0;
   padding-left: 30px;
-  gap: 40px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   opacity: 0;
+}
+figcaption {
+  flex-grow: 1;
+  text-align: center;
+  margin-left: -90px;
+  font-weight: bold;
+  font-size: 18px;
 }
 .display-skill {
   animation: progressive-display 1s ease-in-out forwards;
@@ -559,6 +565,11 @@ a.back-link:hover {
   }
   #projects-container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1280px) {
+  figcaption {
+    margin: 0;
   }
 }
 @media screen and (max-width: 992px) {
