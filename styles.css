@@ -87,15 +87,7 @@ h1#project-title {
 #hand-held-out {
   text-align: center;
   margin-top: 50px;
-  animation: img-display 1.5s ease-in-out;
-}
-@keyframes img-display {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: progressive-display 1.5s ease-in-out;
 }
 #hand-held-out img {
   width: 500px;
@@ -107,56 +99,7 @@ h1#project-title {
   animation: pt1-flash 1.5s infinite;
   color: lightgray;
 }
-@keyframes pt1-flash {
-  0% {
-    color: #000;
-  }
-  33% {
-    color: black;
-  }
-  50% {
-    color: lightgray;
-  }
-  100% {
-    color: lightgray;
-  }
-}
-.pt2 {
-  animation: pt2-flash 1.5s infinite;
-  color: gray;
-}
-@keyframes pt2-flash {
-  0% {
-    color: lightgray;
-  }
-  33% {
-    color: lightgray;
-  }
-  50% {
-    color: black;
-  }
-  100% {
-    color: lightgray;
-  }
-}
-.pt3 {
-  animation: pt3-flash 1.5s 0.1s infinite;
-  color: lightgray;
-}
-@keyframes pt3-flash {
-  0% {
-    color: lightgray;
-  }
-  50% {
-    color: lightgray;
-  }
-  66% {
-    color: #000;
-  }
-  100% {
-    color: #000;
-  }
-}
+
 .hidden {
   display: none;
 }
@@ -171,17 +114,6 @@ p.about-me-text {
 #about-text {
   animation: text-opacity 1.4s;
 }
-@keyframes text-opacity {
-  from {
-    color: transparent;
-  }
-  50% {
-    color: transparent;
-  }
-  to {
-    color: #000;
-  }
-}
 #about-me div.about-img {
   float: left;
 }
@@ -195,14 +127,6 @@ p.about-me-text {
 #about-img {
   animation: img-slidein 1s;
   opacity: 1;
-}
-@keyframes img-slidein {
-  from {
-    width: 5%;
-  }
-  to {
-    width: 66%;
-  }
 }
 .about-me-img.mobile {
   display: none;
@@ -276,15 +200,7 @@ figcaption {
   opacity: 0;
 }
 .project-card.display-project {
-  animation: display-card 1s ease-in-out forwards;
-}
-@keyframes display-card {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: progressive-display 1s ease-in-out forwards;
 }
 .main-mask {
   position: absolute;
@@ -404,17 +320,6 @@ iframe {
 }
 #contact-form.display-contact-method {
   animation: progressive-display 1s ease-in-out 2s forwards;
-}
-@keyframes display-form {
-  from {
-    opacity: 0;
-  }
-  66% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 .contact-form-element {
   position: relative;
@@ -551,6 +456,59 @@ a.back-link:hover {
 #github.display-contact-method {
   animation: progressive-display 1s ease-in-out 1s forwards;
 }
+
+/*** ANIMATIONS ***/
+
+@keyframes pt1-flash {
+  0% {
+    color: #000;
+  }
+  33% {
+    color: black;
+  }
+  50% {
+    color: lightgray;
+  }
+  100% {
+    color: lightgray;
+  }
+}
+.pt2 {
+  animation: pt2-flash 1.5s infinite;
+  color: gray;
+}
+@keyframes pt2-flash {
+  0% {
+    color: lightgray;
+  }
+  33% {
+    color: lightgray;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: lightgray;
+  }
+}
+.pt3 {
+  animation: pt3-flash 1.5s 0.1s infinite;
+  color: lightgray;
+}
+@keyframes pt3-flash {
+  0% {
+    color: lightgray;
+  }
+  50% {
+    color: lightgray;
+  }
+  66% {
+    color: #000;
+  }
+  100% {
+    color: #000;
+  }
+}
 @keyframes progressive-display {
   from {
     opacity: 0;
@@ -559,6 +517,28 @@ a.back-link:hover {
     opacity: 1;
   }
 }
+@keyframes text-opacity {
+  from {
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+  }
+  to {
+    color: #000;
+  }
+}
+@keyframes img-slidein {
+  from {
+    width: 5%;
+  }
+  to {
+    width: 66%;
+  }
+}
+
+/*** MEDIA ***/
+
 @media screen and (max-width: 1600px) {
   #skills-container {
     grid-template-columns: 1fr 1fr 1fr;
