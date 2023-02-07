@@ -102,6 +102,18 @@ const launchAnimation = (index) => {
   getAnimationbysection(index);
 };
 
+const initAnimations = () => {
+  const anim3pts = Array.from(document.getElementsByClassName('anim-3pts'));
+  anim3pts.forEach((anim) => {
+    for (let i = 1; i <= 3; i++) {
+      const pt = document.createElement('span');
+      pt.setAttribute('class', `pt${i}`);
+      pt.innerHTML = '.';
+      anim.appendChild(pt);
+    }
+  });
+};
+
 const getNonBreakingWord = (word) => {
   let response = '';
   const tab = word.split(' ');
@@ -361,3 +373,4 @@ messageInput.addEventListener('blur', () => {
 
 displaySkills();
 displayProjects();
+initAnimations();
