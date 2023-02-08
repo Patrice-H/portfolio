@@ -95,11 +95,15 @@ const getAnimationbysection = (section) => {
 };
 
 const launchAnimation = (index) => {
-  const ellipsis = document.getElementsByClassName('anim-3pts');
-  if (index > 0 && index < 5) {
-    ellipsis[index - 1].classList.add('hidden');
+  if (index === 0) {
+    window.location.assign('http://localhost:3000/');
+  } else {
+    const ellipsis = document.getElementsByClassName('anim-3pts');
+    if (index > 0 && index < 5) {
+      ellipsis[index - 1].classList.add('hidden');
+    }
+    getAnimationbysection(index);
   }
-  getAnimationbysection(index);
 };
 
 const initAnimations = () => {
@@ -306,6 +310,20 @@ const toggleMenu = (menuItems) => {
   });
 };
 
+const controlPosition = () => {
+  const pages = [0, 280, 1200, 2400, 4500];
+  const posY = window.scrollY;
+  let index;
+  for (let i = 0; i < pages.length; i++) {
+    if (posY > pages[i]) {
+      index = i;
+    }
+  }
+  index > 0 ? launchAnimation(index) : null;
+};
+
+/*** DOM - EVENTLISTENERS ***/
+
 const navbar = document.getElementById('navbar');
 const hamburgerMenuBtn = document.getElementById('hamburger-menu-btn');
 const menuItems = document.getElementsByClassName('menu-item');
@@ -351,6 +369,9 @@ window.addEventListener('scroll', () => toggleShadow(navbar));
 submitBtn.addEventListener('click', () =>
   controlForm(inputs, errors, errorMessages)
 );
+onmousewheel = (event) => {
+  controlPosition();
+};
 Array.from(menuItems).forEach((item) => {
   item.addEventListener('click', () => closeMenu(menuItems));
 });
@@ -370,6 +391,8 @@ subjectInput.addEventListener('blur', () => {
 messageInput.addEventListener('blur', () => {
   controlMessage(messageInput, messageError, errorMessages);
 });
+
+/*** INIT ***/
 
 displaySkills();
 displayProjects();
