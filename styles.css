@@ -75,7 +75,7 @@ h1#project-title {
 }
 #slogan {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 0;
   font-size: 18px;
 }
 .anim-paused {
@@ -83,6 +83,10 @@ h1#project-title {
 }
 .anim-running {
   animation-play-state: running;
+}
+#home-section {
+  padding-top: 22px;
+  min-height: 70vh;
 }
 #hand-held-out {
   text-align: center;
@@ -426,7 +430,7 @@ a.back-link:hover {
 #social-media {
   display: flex;
   justify-content: center;
-  gap: 120px;
+  gap: 20px;
   margin: 0 -90px;
   position: absolute;
   top: 50px;
