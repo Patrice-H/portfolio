@@ -256,6 +256,15 @@ const controlEmail = (input, error, messages) => {
   return isControlOK;
 };
 
+/**
+ * Function to control input name (last and first names)
+ *
+ * @description Returns if entry is corform or not. Sets error messages if not
+ * @param input - the input field entry
+ * @param error - the error field element
+ * @param messages - an array of error messages
+ * @returns {boolean} isControlOK.
+ */
 const controlName = (input, error, messages) => {
   let messageNumber;
   let isControlOK = true;
@@ -276,6 +285,14 @@ const controlName = (input, error, messages) => {
   return isControlOK;
 };
 
+/**
+ * Function to control the form entries
+ *
+ * @description Test all input entries and sets if form is conform or not
+ * @param inputs - an array of input elements
+ * @param errors - an array of error
+ * @param messages - an array of error messages
+ */
 const controlForm = (inputs, errors, messages) => {
   let isFormOk = true;
   for (let i = 0; i < 2; i++) {
@@ -294,12 +311,24 @@ const controlForm = (inputs, errors, messages) => {
   console.log('send form : ', isFormOk);
 };
 
+/**
+ * Function to close hamburger menu
+ *
+ * @description remove hamburger-menu class
+ * @param menuItems - The menu items list.
+ */
 const closeMenu = (menuItems) => {
   Array.from(menuItems).forEach((item) => {
     item.classList.remove('hamburger-menu');
   });
 };
 
+/**
+ * Function to switch the menu
+ *
+ * @description Switch the menu between hamburger menu and desktop menu
+ * @param menuItems - the menu items list
+ */
 const toggleMenu = (menuItems) => {
   Array.from(menuItems).forEach((item) => {
     if (Array.from(item.classList).includes('hamburger-menu')) {
@@ -310,7 +339,13 @@ const toggleMenu = (menuItems) => {
   });
 };
 
-const controlPosition = () => {
+/**
+ * Function to control scroll position on page
+ *
+ * @description Launch animations when the user scroll on page
+ * @param e - the event object
+ */
+const controlPosition = (e) => {
   const pages = [0, 280, 1200, 2400, 4500];
   const posY = window.scrollY;
   let index;
@@ -369,8 +404,8 @@ window.addEventListener('scroll', () => toggleShadow(navbar));
 submitBtn.addEventListener('click', () =>
   controlForm(inputs, errors, errorMessages)
 );
-onmousewheel = (event) => {
-  controlPosition();
+onmousewheel = (e) => {
+  controlPosition(e);
 };
 Array.from(menuItems).forEach((item) => {
   item.addEventListener('click', () => closeMenu(menuItems));
@@ -392,7 +427,7 @@ messageInput.addEventListener('blur', () => {
   controlMessage(messageInput, messageError, errorMessages);
 });
 
-/*** INIT ***/
+/*** INIT APP ***/
 
 displaySkills();
 displayProjects();
