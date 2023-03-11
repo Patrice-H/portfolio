@@ -194,6 +194,12 @@ const removeErrorMessage = (inputField, errorField) => {
   errorField.classList.add('hidden');
 };
 
+/**
+ * Function to control conformed input e-mail
+ *
+ * @description Returns if field is conformed with e-mail format or not.
+ * @returns {boolean}
+ */
 const isEmailConform = (inputField) => {
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   if (!regex.test(inputField.value)) {
@@ -203,6 +209,12 @@ const isEmailConform = (inputField) => {
   return true;
 };
 
+/**
+ * Function to control conformed input text
+ *
+ * @description Returns if field contains only letters or not.
+ * @returns {boolean}
+ */
 const isOnlyLetters = (inputField) => {
   const regex = /^[a-zA-Z]+([a-zA-Z\s\-]*)+[a-zA-Z]$/;
   if (!regex.test(inputField.value)) {
@@ -212,6 +224,12 @@ const isOnlyLetters = (inputField) => {
   return true;
 };
 
+/**
+ * Function to control completed input
+ *
+ * @description Returns if field is completed or not.
+ * @returns {boolean}
+ */
 const isfillingField = (inputField) => {
   if (inputField.value === '') {
     return false;
@@ -220,6 +238,15 @@ const isfillingField = (inputField) => {
   return true;
 };
 
+/**
+ * Function to control message textarea
+ *
+ * @description Returns if entry is corform or not. Sets error messages if not
+ * @param input - the input field entry
+ * @param error - the error field element
+ * @param messages - an array of error messages
+ * @returns {boolean} isControlOK.
+ */
 const controlMessage = (input, error, messages) => {
   let messageNumber;
   let isControlOK = true;
@@ -236,6 +263,15 @@ const controlMessage = (input, error, messages) => {
   return isControlOK;
 };
 
+/**
+ * Function to control e-mail input
+ *
+ * @description Returns if entry is corform or not. Sets error messages if not
+ * @param input - the input field entry
+ * @param error - the error field element
+ * @param messages - an array of error messages
+ * @returns {boolean} isControlOK.
+ */
 const controlEmail = (input, error, messages) => {
   let messageNumber;
   let isControlOK = true;
@@ -257,7 +293,7 @@ const controlEmail = (input, error, messages) => {
 };
 
 /**
- * Function to control input name (last and first names)
+ * Function to control name input (last and first names)
  *
  * @description Returns if entry is corform or not. Sets error messages if not
  * @param input - the input field entry
