@@ -183,26 +183,27 @@ const displayProjects = () => {
   });
 };
 
-const displayErrorMessage = (inputField, errorField, message) => {
-  inputField.classList.add('error');
-  errorField.innerHTML = message;
-  errorField.classList.remove('hidden');
+const displayErrorMessage = (input, error, message) => {
+  input.classList.add('error');
+  error.innerHTML = message;
+  error.classList.remove('hidden');
 };
 
-const removeErrorMessage = (inputField, errorField) => {
-  inputField.classList.remove('error');
-  errorField.classList.add('hidden');
+const removeErrorMessage = (input, error) => {
+  input.classList.remove('error');
+  error.classList.add('hidden');
 };
 
 /**
  * Function to control conformed input e-mail
  *
  * @description Returns if field is conformed with e-mail format or not.
+ * @param input - the input field entry
  * @returns {boolean}
  */
-const isEmailConform = (inputField) => {
+const isEmailConform = (input) => {
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-  if (!regex.test(inputField.value)) {
+  if (!regex.test(input.value)) {
     return false;
   }
 
@@ -213,11 +214,12 @@ const isEmailConform = (inputField) => {
  * Function to control conformed input text
  *
  * @description Returns if field contains only letters or not.
+ * @param input - the input field entry
  * @returns {boolean}
  */
-const isOnlyLetters = (inputField) => {
+const isOnlyLetters = (input) => {
   const regex = /^[a-zA-Z]+([a-zA-Z\s\-]*)+[a-zA-Z]$/;
-  if (!regex.test(inputField.value)) {
+  if (!regex.test(input.value)) {
     return false;
   }
 
@@ -228,10 +230,11 @@ const isOnlyLetters = (inputField) => {
  * Function to control completed input
  *
  * @description Returns if field is completed or not.
+ * @param input - the input field entry
  * @returns {boolean}
  */
-const isfillingField = (inputField) => {
-  if (inputField.value === '') {
+const isfillingField = (input) => {
+  if (input.value === '') {
     return false;
   }
 
