@@ -135,6 +135,12 @@ const getNonBreakingWord = (word) => {
   return response;
 };
 
+/**
+ * @function creates a card for each project
+ * @description card view
+ * @param project
+ * @returns card - Includes: mainMask, details, name, abstract, techno, button, and frame.
+ */
 const createProjectCard = (project) => {
   const card = document.createElement('article');
   const mainMask = document.createElement('div');
@@ -183,6 +189,13 @@ const displayProjects = () => {
   });
 };
 
+/**
+ * @function display error message
+ * @description adds class 'error' and removes the class 'hidden'
+ * @param input - The input element that the user is typing into.
+ * @param error - The error message element
+ * @param message - The error message to display.
+ */
 const displayErrorMessage = (input, error, message) => {
   input.classList.add('error');
   error.innerHTML = message;
@@ -195,8 +208,7 @@ const removeErrorMessage = (input, error) => {
 };
 
 /**
- * Function to control conformed input e-mail
- *
+ * @function control conformed input e-mail
  * @description Returns if field is conformed with e-mail format or not.
  * @param input - the input field entry
  * @returns {boolean}
@@ -211,7 +223,7 @@ const isEmailConform = (input) => {
 };
 
 /**
- * Function to control conformed input text
+ * @function control conformed input text
  *
  * @description Returns if field contains only letters or not.
  * @param input - the input field entry
@@ -227,8 +239,7 @@ const isOnlyLetters = (input) => {
 };
 
 /**
- * Function to control completed input
- *
+ * @function control completed input
  * @description Returns if field is completed or not.
  * @param input - the input field entry
  * @returns {boolean}
@@ -242,8 +253,7 @@ const isfillingField = (input) => {
 };
 
 /**
- * Function to control message textarea
- *
+ * @function controlMessage message textarea
  * @description Returns if entry is corform or not. Sets error messages if not
  * @param input - the input field entry
  * @param error - the error field element
@@ -267,8 +277,7 @@ const controlMessage = (input, error, messages) => {
 };
 
 /**
- * Function to control e-mail input
- *
+ * @function control e-mail input
  * @description Returns if entry is corform or not. Sets error messages if not
  * @param input - the input field entry
  * @param error - the error field element
@@ -296,8 +305,7 @@ const controlEmail = (input, error, messages) => {
 };
 
 /**
- * Function to control name input (last and first names)
- *
+ * @function control name input (last and first names)
  * @description Returns if entry is corform or not. Sets error messages if not
  * @param input - the input field entry
  * @param error - the error field element
@@ -325,8 +333,7 @@ const controlName = (input, error, messages) => {
 };
 
 /**
- * Function to control the form entries
- *
+ * @function control form
  * @description Test all input entries and sets if form is conform or not
  * @param inputs - an array of input elements
  * @param errors - an array of error
@@ -351,8 +358,7 @@ const controlForm = (inputs, errors, messages) => {
 };
 
 /**
- * Function to close hamburger menu
- *
+ * @function close hamburger menu
  * @description remove hamburger-menu class
  * @param menuItems - The menu items list.
  */
@@ -363,8 +369,7 @@ const closeMenu = (menuItems) => {
 };
 
 /**
- * Function to switch the menu
- *
+ * @function switch the menu / media
  * @description Switch the menu between hamburger menu and desktop menu
  * @param menuItems - the menu items list
  */
@@ -379,8 +384,7 @@ const toggleMenu = (menuItems) => {
 };
 
 /**
- * Function to control scroll position on page
- *
+ * @function control scroll position on page
  * @description Launch animations when the user scroll on page
  * @param e - the event object
  */
