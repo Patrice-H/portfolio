@@ -118,6 +118,11 @@ const initAnimations = () => {
   });
 };
 
+/**
+ * It takes a string and returns a string with non-breaking spaces between words
+ * @param {string} word - the word to be converted
+ * @returns {string} A function that takes a word as an argument and returns a string.
+ */
 const getNonBreakingWord = (word) => {
   let response = '';
   const tab = word.split(' ');
