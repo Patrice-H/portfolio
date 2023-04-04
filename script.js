@@ -12,18 +12,23 @@ const toggleShadow = (element) => {
 
 const displaySkills = () => {
   const skillsContainer = document.getElementById('skills-container');
-  skills.forEach((skill) => {
+  const skillsDisplayed = skills.filter((skill) => skill.type !== undefined);
+
+  skillsDisplayed.forEach((skill) => {
+    let div = document.createElement('div');
     let figure = document.createElement('figure');
     let img = document.createElement('img');
     let figcaption = document.createElement('figcaption');
+    div.setAttribute('class', 'skill');
     figure.setAttribute('id', `fig${skill.id}`);
     figure.setAttribute('class', 'skills-row');
     img.setAttribute('src', `assets/${skill.file}`);
     img.setAttribute('alt', skill.name);
     figcaption.innerHTML = skill.name;
     figure.appendChild(img);
-    figure.appendChild(figcaption);
-    skillsContainer.appendChild(figure);
+    div.appendChild(figure);
+    div.appendChild(figcaption);
+    skillsContainer.appendChild(div);
   });
 };
 const displayAboutSection = () => {
