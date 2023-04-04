@@ -157,30 +157,30 @@ section.long {
 }
 #skills-container {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #skills-container img {
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
+}
+.skill {
+  width: 19%;
 }
 figure {
-  display: flex;
-  align-items: center;
-  height: 124px;
-  margin: 0;
-  padding-left: 30px;
+  width: 128px;
+  height: 110px;
+  margin: 30px auto;
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 64px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   opacity: 0;
 }
 figcaption {
   flex-grow: 1;
   text-align: center;
-  margin-left: -90px;
   font-weight: bold;
   font-size: 18px;
 }
